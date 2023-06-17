@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--primary: #fea116;
+	--primary-box-shadow: rgba(254, 161, 22, 0.6);
+	--light: #F1F8FF;
+	--dark: #0f172b;
+	--font: 'Nunito', sans-serif;
+	--font-pacifico: 'Pacifico', cursive;
+}
+
+*:not(i),
+*:not(i)::before {
+	font-family: var(--font);
+}
+
+body {
+	background-color: #f1f8ff;
+}
+
+.bg-hero {
+	background: linear-gradient(rgba(15,23,43,.9),rgba(15,23,43,.9)), url(./images/bg-hero.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@layer base {
+	.hide {
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	.reveal {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}
+
+.focus {
+	transition: box-shadow 0.2s ease;
+	outline: none;
+	appearance: none;
+}
+
+.focus:focus, .focuse:focus-visible {
+	box-shadow: 0px 0px 0px 4px var(--primary-box-shadow);
+}
+
+@keyframes mySpin {
+	0% {
+		rotate: 0deg;
+	} 100% {
+		rotate: 360deg;
+	}
+}
+@keyframes fadeIn {
+	0% {
+		scale: 1;
+	} 100% {
+		scale: 1.2;
+	}
+}
